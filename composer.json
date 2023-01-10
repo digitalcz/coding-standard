@@ -2,7 +2,7 @@
     "name": "digitalcz/coding-standard",
     "description": "Coding standards used across projects developed by Digital Solutions teams.",
     "type": "library",
-    "license": "open-source",
+    "license": "MIT",
     "keywords": [
         "codesniffer",
         "codestyle",

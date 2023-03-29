@@ -4,10 +4,11 @@ FROM php:8.1-cli-alpine
 RUN apk update && apk add --no-cache \
     $PHPIZE_DEPS \
     git \
-    bash
+    bash \
+    linux-headers
 
 # Xdebug
-RUN pecl install xdebug
+RUN pecl install xdebug-3.2.1
 RUN docker-php-ext-enable xdebug
 
 # Composer

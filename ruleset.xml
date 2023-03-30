@@ -31,7 +31,7 @@
 
     <!--  Numbers  -->
     <rule ref="SlevomatCodingStandard.Numbers">
-        <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator"/>
+        <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator.DisallowedNumericLiteralSeparator"/>
     </rule>
 
     <!--  Exceptions  -->

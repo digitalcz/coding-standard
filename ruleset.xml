@@ -80,13 +80,11 @@
     <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
 
     <!--  Files  -->
-    <rule ref="SlevomatCodingStandard.Files.FileLength"/>
     <rule ref="SlevomatCodingStandard.Files.LineLength">
         <properties>
             <property name="lineLengthLimit" value="180"/>
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
 
     <!--  Classes  -->
     <rule ref="SlevomatCodingStandard.Classes.DisallowMultiPropertyDefinition"/>

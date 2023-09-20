@@ -27,7 +27,12 @@
     </rule>
 
     <!--  Arrays  -->
-    <rule ref="SlevomatCodingStandard.Arrays"/>
+    <rule ref="SlevomatCodingStandard.Arrays.ArrayAccess"/>
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowPartiallyKeyed"/>
+    <rule ref="SlevomatCodingStandard.Arrays.MultiLineArrayEndBracketPlacement"/>
+    <rule ref="SlevomatCodingStandard.Arrays.SingleLineArrayWhitespace"/>
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 
     <!--  Numbers  -->
     <rule ref="SlevomatCodingStandard.Numbers">

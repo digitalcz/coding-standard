@@ -232,7 +232,31 @@
 
     <!-- Attributes -->
     <rule ref="SlevomatCodingStandard.Attributes.AttributeAndTargetSpacing" />
-    <rule ref="SlevomatCodingStandard.Attributes.AttributesOrder" />
+    <rule ref="SlevomatCodingStandard.Attributes.AttributesOrder">
+        <properties>
+            <property name="order" type="array">
+                <element value="ORM\Table"/>
+                <element value="ORM\"/>
+                <element value="Gedmo\"/>
+                <element value="Rest\"/>
+                <element value="Get"/>
+                <element value="Post"/>
+                <element value="Put"/>
+                <element value="Patch"/>
+                <element value="Delete"/>
+                <element value="BodyConverter"/>
+                <element value="ParamConverter"/>
+                <element value="OA\Tag"/>
+                <element value="OA\Get"/>
+                <element value="OA\Post"/>
+                <element value="OA\Parameter"/>
+                <element value="OA\RequestBody"/>
+                <element value="OA\Response"/>
+                <element value="OA\"/>
+                <element value="Groups"/>
+            </property>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Attributes.RequireAttributeAfterDocComment" />
     <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining" />
 </ruleset>

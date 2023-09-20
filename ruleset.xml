@@ -281,6 +281,7 @@
                 <element value="Put"/>
                 <element value="Patch"/>
                 <element value="Delete"/>
+                <element value="Route"/>
                 <element value="BodyConverter"/>
                 <element value="ParamConverter"/>
                 <element value="OA\Tag"/>

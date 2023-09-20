@@ -91,7 +91,7 @@
     <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
     <rule ref="SlevomatCodingStandard.Classes.DisallowStringExpressionPropertyFetch"/>
     <rule ref="SlevomatCodingStandard.Classes.ConstantSpacing"/>
-    <rule ref="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>
+<!--    <rule ref="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>-->
     <rule ref="SlevomatCodingStandard.Classes.RequireMultiLineMethodSignature"/>
     <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
 <!--    <rule ref="SlevomatCodingStandard.Classes.RequireSelfReference"/>-->

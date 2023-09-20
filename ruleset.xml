@@ -224,4 +224,10 @@
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint"/>
     </rule>
+
+    <!-- Attributes -->
+    <rule ref="SlevomatCodingStandard.Attributes.AttributeAndTargetSpacing" />
+    <rule ref="SlevomatCodingStandard.Attributes.AttributesOrder" />
+    <rule ref="SlevomatCodingStandard.Attributes.RequireAttributeAfterDocComment" />
+    <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining" />
 </ruleset>

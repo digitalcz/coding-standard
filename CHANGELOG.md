@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0] - Unreleased
+## [0.1.0] - 2023-09-25
 ### Added
 - Added new rules for attributes
 

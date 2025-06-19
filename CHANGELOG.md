@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.3.0] - 2025-06-19
 ### Added
 - GitHub Actions CI workflow with PHP 7.4-8.3 matrix testing
 - Comprehensive integration test suite with 16 tests covering all ruleset functionality

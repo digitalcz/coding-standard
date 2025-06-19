@@ -10,7 +10,7 @@ This is a PHP coding standards library by Digital Solutions (digitalcz) that pro
 
 ### Core Configuration
 - **Main ruleset**: `ruleset.xml` - Contains all coding standards rules based on PSR-12 with additional strict requirements
-- **Dependencies**: PHP ≥7.4, Slevomat Coding Standard 8.14.*, PHP_CodeSniffer 3.9.*
+- **Dependencies**: PHP ≥7.4, Slevomat Coding Standard 8.19.*, PHP_CodeSniffer 3.13.*
 - **Line length limit**: 180 characters (configured in both Generic.Files.LineLength and SlevomatCodingStandard.Files.LineLength)
 
 ### Standards Enforced

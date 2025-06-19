@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="DigitalCz Coding Standard - Self Check">
+    <rule ref="./ruleset.xml"/>
+
+    <arg name="colors"/>
+    <arg name="parallel" value="16"/>
+    <arg value="ps"/>
+    <arg name="cache" value=".phpcs.cache"/>
+
+    <file>tests</file>
+    <exclude-pattern>tests/fixtures/</exclude-pattern>
+</ruleset>

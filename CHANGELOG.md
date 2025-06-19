@@ -23,6 +23,19 @@
 ### Removed
 - Docker development infrastructure (Dockerfile, Makefile, docker-compose.yml)
 
+## [0.2.1] - 2024-02-29
+### Changed
+- Bump squizlabs/php_codesniffer to 3.9.*
+
+## [0.2.0] - 2024-01-26
+### Added
+- New rule for InlineDocCommentDeclaration
+
+### Changed
+- Bump squizlabs/php_codesniffer to 3.8.*
+- Bump slevomat/coding-standard to 8.14.*
+- Update InlineDocCommentDeclaration rule
+
 ## [0.1.0] - 2023-09-25
 ### Added
 - Added new rules for attributes

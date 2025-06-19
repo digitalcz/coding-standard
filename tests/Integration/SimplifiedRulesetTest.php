@@ -11,30 +11,24 @@ final class SimplifiedRulesetTest extends TestCase
     private string $phpcsPath;
     private string $rulesetPath;
 
-    protected function setUp(): void
-    {
-        $this->phpcsPath = __DIR__ . '/../../vendor/bin/phpcs';
-        $this->rulesetPath = __DIR__ . '/../../ruleset.xml';
-    }
-
     public function testCompliantCodePassesRuleset(): void
     {
         $testFile = __DIR__ . '/../fixtures/compliant/good-example.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
-        
+
         $this->assertEquals(
             0,
             $exitCode,
-            'Compliant code should pass without violations. Output: ' . implode("\n", $output)
+            'Compliant code should pass without violations. Output: ' . implode("\n", $output),
         );
     }
 
@@ -42,42 +36,38 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/basic-violations.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
-        
-        $this->assertGreaterThan(
-            0,
-            $exitCode,
-            'Violating code should trigger rules and return non-zero exit code'
-        );
+
+        $this->assertGreaterThan(0, $exitCode, 'Violating code should trigger rules and return non-zero exit code');
     }
 
     public function testLineLengthLimit180Characters(): void
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/line-length-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Line length violations should be detected');
         $this->assertTrue(
             strpos($outputString, '180') !== false || strpos($outputString, 'line') !== false,
-            'Should detect line length violations. Output: ' . $outputString
+            'Should detect line length violations. Output: ' . $outputString,
         );
     }
 
@@ -85,17 +75,16 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/complexity-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
-        $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Complexity violations should be detected');
     }
 
@@ -103,17 +92,16 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/function-length-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
-        $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Function length violations should be detected');
     }
 
@@ -121,23 +109,23 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/annotation-grouping-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Annotation grouping violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'DocCommentSpacing') !== false || 
+            strpos($outputString, 'DocCommentSpacing') !== false ||
             strpos($outputString, 'annotation') !== false ||
             strpos($outputString, 'spacing') !== false,
-            'Should detect DocComment spacing/grouping violations. Output: ' . $outputString
+            'Should detect DocComment spacing/grouping violations. Output: ' . $outputString,
         );
     }
 
@@ -145,24 +133,24 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/class-structure-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Class structure violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'ClassStructure') !== false || 
+            strpos($outputString, 'ClassStructure') !== false ||
             strpos($outputString, 'class') !== false ||
             strpos($outputString, 'structure') !== false ||
             strpos($outputString, 'order') !== false,
-            'Should detect class structure ordering violations. Output: ' . $outputString
+            'Should detect class structure ordering violations. Output: ' . $outputString,
         );
     }
 
@@ -170,23 +158,23 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/type-hint-exclusions-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         // Should have some violations but NOT the excluded MissingNativeTypeHint errors
         $this->assertGreaterThan(0, $exitCode, 'File should have some violations');
         $this->assertStringNotContainsString(
             'MissingNativeTypeHint',
             $outputString,
-            'MissingNativeTypeHint should be excluded. Output: ' . $outputString
+            'MissingNativeTypeHint should be excluded. Output: ' . $outputString,
         );
     }
 
@@ -194,22 +182,22 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/forbidden-functions-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         // Should have violations but NOT FoundWithAlternative since it's excluded
         $this->assertStringNotContainsString(
             'FoundWithAlternative',
             $outputString,
-            'FoundWithAlternative should be excluded. Output: ' . $outputString
+            'FoundWithAlternative should be excluded. Output: ' . $outputString,
         );
     }
 
@@ -217,27 +205,27 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/commented-rules-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         // Commented out rules should not trigger violations
         $this->assertStringNotContainsString(
             'RequireSingleLineMethodSignature',
             $outputString,
-            'RequireSingleLineMethodSignature should be commented out. Output: ' . $outputString
+            'RequireSingleLineMethodSignature should be commented out. Output: ' . $outputString,
         );
         $this->assertStringNotContainsString(
             'RequireSelfReference',
             $outputString,
-            'RequireSelfReference should be commented out. Output: ' . $outputString
+            'RequireSelfReference should be commented out. Output: ' . $outputString,
         );
     }
 
@@ -245,24 +233,24 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/array-rules-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Array rule violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'Array') !== false || 
+            strpos($outputString, 'Array') !== false ||
             strpos($outputString, 'array') !== false ||
             strpos($outputString, 'TrailingArrayComma') !== false ||
             strpos($outputString, 'DisallowLongArraySyntax') !== false,
-            'Should detect array rule violations. Output: ' . $outputString
+            'Should detect array rule violations. Output: ' . $outputString,
         );
     }
 
@@ -270,24 +258,24 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/namespace-rules-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Namespace rule violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'use') !== false || 
+            strpos($outputString, 'use') !== false ||
             strpos($outputString, 'Use') !== false ||
             strpos($outputString, 'UnusedUses') !== false ||
             strpos($outputString, 'AlphabeticallySortedUses') !== false,
-            'Should detect namespace/use statement violations. Output: ' . $outputString
+            'Should detect namespace/use statement violations. Output: ' . $outputString,
         );
     }
 
@@ -295,24 +283,24 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/control-structure-rules-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Control structure rule violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'Yoda') !== false || 
+            strpos($outputString, 'Yoda') !== false ||
             strpos($outputString, 'ternary') !== false ||
             strpos($outputString, 'empty') !== false ||
             strpos($outputString, 'operator') !== false,
-            'Should detect control structure violations. Output: ' . $outputString
+            'Should detect control structure violations. Output: ' . $outputString,
         );
     }
 
@@ -320,24 +308,24 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/violations/variable-rules-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Variable rule violations should be detected');
         $this->assertTrue(
-            strpos($outputString, 'Variable') !== false || 
+            strpos($outputString, 'Variable') !== false ||
             strpos($outputString, 'variable') !== false ||
             strpos($outputString, 'unused') !== false ||
             strpos($outputString, 'Unused') !== false,
-            'Should detect variable rule violations. Output: ' . $outputString
+            'Should detect variable rule violations. Output: ' . $outputString,
         );
     }
 
@@ -345,23 +333,23 @@ final class SimplifiedRulesetTest extends TestCase
     {
         $testFile = __DIR__ . '/../fixtures/property-tests/edge-cases-test.php';
         $this->assertFileExists($testFile);
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($testFile)
+            escapeshellarg($testFile),
         );
-        
+
         exec($command, $output, $exitCode);
         $outputString = implode("\n", $output);
-        
+
         $this->assertGreaterThan(0, $exitCode, 'Edge case violations should be detected');
-        
+
         // Should detect the 181-character line violation
         $this->assertTrue(
             strpos($outputString, 'line') !== false,
-            'Should detect line length edge case. Output: ' . $outputString
+            'Should detect line length edge case. Output: ' . $outputString,
         );
     }
 
@@ -414,22 +402,28 @@ PHP;
 
         $tempFile = tempnam(sys_get_temp_dir(), 'modern_php_test') . '.php';
         file_put_contents($tempFile, $goodModernCode . "\n");
-        
+
         $command = sprintf(
             '%s --standard=%s %s',
             escapeshellarg($this->phpcsPath),
             escapeshellarg($this->rulesetPath),
-            escapeshellarg($tempFile)
+            escapeshellarg($tempFile),
         );
-        
+
         exec($command, $output, $exitCode);
-        
+
         unlink($tempFile);
-        
+
         $this->assertEquals(
             0,
             $exitCode,
-            'Modern PHP features should pass without violations. Output: ' . implode("\n", $output)
+            'Modern PHP features should pass without violations. Output: ' . implode("\n", $output),
         );
+    }
+
+    protected function setUp(): void
+    {
+        $this->phpcsPath = __DIR__ . '/../../vendor/bin/phpcs';
+        $this->rulesetPath = __DIR__ . '/../../ruleset.xml';
     }
 }

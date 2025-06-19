@@ -9,9 +9,4 @@
             <directory>tests/Integration</directory>
         </testsuite>
     </testsuites>
-    <source>
-        <include>
-            <file>ruleset.xml</file>
-        </include>
-    </source>
 </phpunit>

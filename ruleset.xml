@@ -19,7 +19,6 @@
         <exclude name="Generic.PHP.ForbiddenFunctions.FoundWithAlternative"/>
     </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
-    <rule ref="Generic.Functions.CallTimePassByReference"/>
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <rule ref="Generic.PHP.LowerCaseConstant"/>
@@ -269,7 +268,7 @@
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint"/>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat"/>
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
 
     <!-- Attributes -->

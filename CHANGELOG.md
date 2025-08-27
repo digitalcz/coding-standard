@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Updated Slevomat Coding Standard to 8.20.*
 
 ## [0.3.0] - 2025-06-19
 ### Added

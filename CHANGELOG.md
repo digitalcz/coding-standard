@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.4.0] - 2025-09-22
 ### Changed
 - Updated Slevomat Coding Standard to 8.23.*
 - Updated PHP_CodeSniffer to 4.0.*

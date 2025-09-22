@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 ### Changed
-- Updated Slevomat Coding Standard to 8.20.*
+- Updated Slevomat Coding Standard to 8.23.*
+- Updated PHP_CodeSniffer to 4.0.*
 
 ## [0.3.0] - 2025-06-19
 ### Added

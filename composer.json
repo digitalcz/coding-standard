@@ -10,11 +10,11 @@
     ],
     "require": {
         "php": ">=7.4",
-        "slevomat/coding-standard": "8.23.*",
+        "slevomat/coding-standard": "8.24.*",
         "squizlabs/php_codesniffer": "4.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5 || ^10.5 || ^11.5 || ^12.4"
     },
     "config": {
         "allow-plugins": {

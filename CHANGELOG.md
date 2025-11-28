@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2025-11-28
+### Changed
+- Updated Slevomat Coding Standard to 8.25.*
+
+## [0.4.1] - 2025-10-17
+### Changed
+- Updated Slevomat Coding Standard to 8.24.*
+- Expanded PHPUnit version support to ^9.5 || ^10.5 || ^11.5 || ^12.4
+- Updated .gitignore and removed obsolete cache files
+
 ## [0.4.0] - 2025-09-22
 ### Changed
 - Updated Slevomat Coding Standard to 8.23.*

@@ -90,6 +90,7 @@
     <rule ref="SlevomatCodingStandard.Classes.DisallowMultiPropertyDefinition"/>
     <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
     <rule ref="SlevomatCodingStandard.Classes.DisallowStringExpressionPropertyFetch"/>
+    <rule ref="SlevomatCodingStandard.Classes.ClassKeywordOrder"/>
     <rule ref="SlevomatCodingStandard.Classes.ConstantSpacing"/>
 <!--    <rule ref="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>-->
     <rule ref="SlevomatCodingStandard.Classes.RequireMultiLineMethodSignature"/>

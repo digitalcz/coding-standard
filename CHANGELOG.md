@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Added `SlevomatCodingStandard.Classes.ClassKeywordOrder` rule to enforce correct order of class modifiers (e.g., `final readonly class`)
+
 ### Changed
 - Updated Slevomat Coding Standard to 8.27.*
 

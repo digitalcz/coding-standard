@@ -421,6 +421,51 @@ PHP;
         );
     }
 
+    public function testClassKeywordOrderCompliant(): void
+    {
+        $testFile = __DIR__ . '/../fixtures/compliant/class-keyword-order-test.php';
+        $this->assertFileExists($testFile);
+
+        $command = sprintf(
+            '%s --standard=%s %s',
+            escapeshellarg($this->phpcsPath),
+            escapeshellarg($this->rulesetPath),
+            escapeshellarg($testFile),
+        );
+
+        exec($command, $output, $exitCode);
+
+        $this->assertEquals(
+            0,
+            $exitCode,
+            'Compliant class keyword order should pass without violations. Output: ' . implode("\n", $output),
+        );
+    }
+
+    public function testClassKeywordOrderViolations(): void
+    {
+        $testFile = __DIR__ . '/../fixtures/violations/class-keyword-order-test.php';
+        $this->assertFileExists($testFile);
+
+        $command = sprintf(
+            '%s --standard=%s %s',
+            escapeshellarg($this->phpcsPath),
+            escapeshellarg($this->rulesetPath),
+            escapeshellarg($testFile),
+        );
+
+        exec($command, $output, $exitCode);
+        $outputString = implode("\n", $output);
+
+        $this->assertGreaterThan(0, $exitCode, 'Class keyword order violations should be detected');
+        $this->assertTrue(
+            strpos($outputString, 'ClassKeywordOrder') !== false ||
+            strpos($outputString, 'keyword') !== false ||
+            strpos($outputString, 'order') !== false,
+            'Should detect class keyword order violations. Output: ' . $outputString,
+        );
+    }
+
     protected function setUp(): void
     {
         $this->phpcsPath = __DIR__ . '/../../vendor/bin/phpcs';

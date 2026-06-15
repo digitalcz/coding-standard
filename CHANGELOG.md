@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-06-15
+### Added
+- Added `SlevomatCodingStandard.Exceptions.CatchExceptionsOrder` rule
+- Added `SlevomatCodingStandard.Classes.TraitUseOrder` rule
+- Added `SlevomatCodingStandard.Commenting.ThrowsAnnotationsOrder` rule
+
+### Changed
+- Updated Slevomat Coding Standard to 8.29.*
+
+## [0.5.1] - 2026-02-20
+### Changed
+- Changed Composer package type to `phpcodesniffer-standard`
+- Added PHP 8.5 to the CI matrix
+
 ## [0.5.0] - 2026-02-16
 ### Added
 - Added `SlevomatCodingStandard.Classes.ClassKeywordOrder` rule to enforce correct order of class modifiers (e.g., `final readonly class`)

@@ -40,6 +40,7 @@
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 
     <!--  Exceptions  -->
+    <rule ref="SlevomatCodingStandard.Exceptions.CatchExceptionsOrder"/>
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
     <rule ref="SlevomatCodingStandard.Exceptions.RequireNonCapturingCatch"/>
@@ -104,6 +105,7 @@
     <rule ref="SlevomatCodingStandard.Classes.PropertyDeclaration"/>
     <rule ref="SlevomatCodingStandard.Classes.ClassMemberSpacing"/>
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
+    <rule ref="SlevomatCodingStandard.Classes.TraitUseOrder"/>
     <rule ref="SlevomatCodingStandard.Classes.DisallowMultiConstantDefinition"/>
     <rule ref="SlevomatCodingStandard.Classes.ParentCallSpacing"/>
     <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
@@ -194,6 +196,7 @@
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
+    <rule ref="SlevomatCodingStandard.Commenting.ThrowsAnnotationsOrder"/>
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
         <properties>
             <property name="forbiddenAnnotations" type="array">

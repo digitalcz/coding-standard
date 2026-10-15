@@ -10,7 +10,7 @@ This is a PHP coding standards library by Digital Solutions (digitalcz) that pro
 
 ### Core Configuration
 - **Main ruleset**: `ruleset.xml` - Contains all coding standards rules based on PSR-12 with additional strict requirements
-- **Dependencies**: PHP ≥7.4, Slevomat Coding Standard 8.20.*, PHP_CodeSniffer 3.13.*
+- **Dependencies**: PHP ≥7.4, Slevomat Coding Standard 8.29.*, PHP_CodeSniffer 4.0.*
 - **Line length limit**: 180 characters (configured in both Generic.Files.LineLength and SlevomatCodingStandard.Files.LineLength)
 
 ### Standards Enforced
@@ -71,7 +71,7 @@ composer cs-fix
 ```
 
 ### Testing
-The project includes a comprehensive integration test suite with 16 tests that validates:
+The project includes a comprehensive integration test suite with 18 tests that validates:
 
 **Core Functionality:**
 - Ruleset compliance with fixture files
@@ -90,7 +90,7 @@ The project includes a comprehensive integration test suite with 16 tests that v
 **Test Structure:**
 ```
 tests/
-├── Integration/SimplifiedRulesetTest.php    # Main test class (16 tests)
+├── Integration/SimplifiedRulesetTest.php    # Main test class (18 tests)
 ├── fixtures/
 │   ├── compliant/                           # Code that should pass
 │   ├── violations/                          # Code that should fail  
@@ -107,6 +107,6 @@ composer test
 
 - This package is intended for internal use across Digital Solutions projects
 - Documentation is in Czech language
-- Uses 0.x versioning (currently 0.1.0)
+- Uses 0.x versioning (currently 0.6.0)
 - Project recently removed Docker/build infrastructure (Dockerfile, Makefile, docker-compose.yml were deleted)
 - Main development branch is `0.x`

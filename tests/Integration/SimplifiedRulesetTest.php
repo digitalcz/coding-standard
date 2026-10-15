@@ -367,11 +367,11 @@ namespace DigitalCz\Example;
 
 use DateTime;
 
-final class ModernPhpExample
+final readonly class ModernPhpExample
 {
     public function __construct(
-        private readonly string $value,
-        private readonly ?DateTime $optional = null,
+        private string $value,
+        private ?DateTime $optional = null,
     ) {
     }
 

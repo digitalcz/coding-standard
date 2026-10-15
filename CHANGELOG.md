@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-15
+### Added
+- Added `SlevomatCodingStandard.Classes.ReadonlyClass` rule
+- Allowed PHPUnit 13 in dev dependencies
+
+### Changed
+- Updated Slevomat Coding Standard to 8.31.*
+- Updated GitHub Actions `actions/checkout` to v7 and `actions/cache` to v6
+
 ## [0.6.0] - 2026-06-15
 ### Added
 - Added `SlevomatCodingStandard.Exceptions.CatchExceptionsOrder` rule
